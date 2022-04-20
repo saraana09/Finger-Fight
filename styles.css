@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.left {
+    background-color: #FFAAAA;
+
+}
+.right{
+    background-color: #AAAAFF;
+
+}
+.column{
+    float: left;
+    align-items: center;
+    width: 50%;
+    height: 100vh;
+}
+img {
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+  .playerHand{
+      transform: rotateY(180deg);
+
+  }

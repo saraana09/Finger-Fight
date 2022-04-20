@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Finger Fight</title>
+  </head>
+  <body>
+    <section class="game">
+      <div class="left column">
+        <div class="name">Computer</div>
+        <div class="computerScore">
+          <h4>0</h4>
+          <div class="computerHand"><img src="images/hand.png" alt="" /></div>
+        </div>
+      </div>
+      <div class="right column">
+        <div class="name">Player</div>
+        <div class="playerScore">
+          <h4>0</h4>
+          <div class="playerHand"><img src="images/hand.png" alt="" /></div>
+        </div>
+        <div class="playerOption">
+          <h3>Pick your finger</h3>
+          <button class="fingerBtn">thumb</button>
+          <button class="fingerBtn">index</button>
+          <button class="fingerBtn">middle</button>
+          <button class="fingerBtn">ring</button>
+          <button class="fingerBtn">pinky</button>
+        </div>
+      </div>
+    </section>
+    <section class="menu">
+      <div class="round">Round 1</div>
+      <button class="continue">Continue</button>
+      <button class="restart">New game</button>
+    </section>
+    <script src="app.js"></script>
+  </body>
+</html>
