@@ -27,13 +27,18 @@ img {
     margin-right: auto;
     
   }
+.dod{
+   height: 50%;
+   width: 50%;
+    
+  }
 
 .computerHand{
     transform: rotateY(180deg);
     
 
   }
-  .name{
+.name{
     border: none;
     width: 25vw;
     height: 20vh;
@@ -80,7 +85,7 @@ img {
         
       
   }
-  h1{
+h1{
       font-size: 100px;
   }
 
@@ -94,10 +99,10 @@ img {
     border-radius: 50%;     
     cursor: pointer;
   }
-  .game {
+.game {
     position:absolute;
  }
- section.fadeOut{
+section.fadeOut{
     opacity: 0;
     pointer-events: none;
  }

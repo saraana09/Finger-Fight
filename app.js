@@ -13,8 +13,8 @@ startGame();
 
 const playGame = () => {
     const options = document.querySelectorAll('.fingerBtn')
-    const playerHand = document.querySelector('.playerHand')
-    const computerHand = document.querySelector('.computerHand')
+    const playerHand = document.querySelector('#player-image')
+    const computerHand = document.querySelector('#computer-image')
 
  
     const computerOptions = ["thumb", "index","middle","ring","pinky"];  
@@ -22,11 +22,16 @@ const playGame = () => {
 
     options.forEach(option =>{
         option.addEventListener('click', function(){
+        // Random fingers for computer
             const computerNum = Math.floor(Math.random()*5);
             const computerFinger = computerOptions[computerNum];
-            console.log(computerFinger)
+        // Updating finger images            
+            playerHand.src = `./images/${this.name}.png`;            
+            computerHand.src = `./images/${computerFinger}.png`;
+            
         })
     })
+    
     
 }
 playGame()
