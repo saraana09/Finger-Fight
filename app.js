@@ -12,8 +12,6 @@ const startGame = () =>{
 }
 startGame();
 
-
-
 const playGame = () => {
     const options = document.querySelectorAll('.fingerBtn');
     const playerHand = document.getElementById('player-image');
@@ -40,12 +38,15 @@ const playGame = () => {
             computerHand.src = `./images/${computerFinger}.png`;   
             
             compareFingers(playerFinger, computerFinger);   
+            stopGame(pScore, cScore)
            
             
         })        
     })   
     
 }
+playGame()
+
 
 const updateScore = () => {
     const playerScore = document.getElementById('player-score');
@@ -54,14 +55,14 @@ const updateScore = () => {
     computerScore.textContent = cScore;
   }; 
 
-const compareFingers = (computerFinger, playerFinger) => {
-    if(playerFinger==="thumb"){
-        if(computerFinger==="index"){            
+const compareFingers = (playerFinger, computerFinger) => {
+    if(playerFinger === "thumb"){
+        if(computerFinger === "index"){            
             pScore++;
             updateScore();
             return
         }
-        else if (compareFingers==="pinky"){            
+        else if (computerFinger==="pinky"){            
             cScore++
             updateScore()
             return
@@ -75,7 +76,7 @@ const compareFingers = (computerFinger, playerFinger) => {
             updateScore();
             return
         }
-        else if (compareFingers==="thumb"){            
+        else if (computerFinger==="thumb"){            
             cScore++
             updateScore()
             return
@@ -89,7 +90,7 @@ const compareFingers = (computerFinger, playerFinger) => {
             updateScore();
             return
         }
-        else if (compareFingers==="index"){            
+        else if (computerFinger==="index"){            
             cScore++
             updateScore()
             return
@@ -103,7 +104,7 @@ const compareFingers = (computerFinger, playerFinger) => {
             updateScore();
             return
         }
-        else if (compareFingers==="middle"){            
+        else if (computerFinger==="middle"){            
             cScore++
             updateScore()
             return
@@ -117,7 +118,7 @@ const compareFingers = (computerFinger, playerFinger) => {
             updateScore();
             return
         }
-        else if (compareFingers==="ring"){            
+        else if (computerFinger==="ring"){            
             cScore++
             updateScore()
             return
@@ -126,14 +127,25 @@ const compareFingers = (computerFinger, playerFinger) => {
         }
     }
 }
-playGame()
-// const stopGame = (pScore, cScore) =>{
-//     if(cScore == 2 || pScore == 2){
-//         prompt("game over")
-//         startGame()
-//     }
-//     else{
-//        return
-//     }
 
-// }
+const stopGame = (pScore, cScore) =>{
+    if(cScore == 2 || pScore == 2){        
+        let winner = document.getElementsByTagName('h1')
+        const menuScreen = document.querySelector('.menu');
+        const gameScreen = document.querySelector('.game');
+        menuScreen.classList.remove('fadeOut');
+        gameScreen.classList.remove('fadeIn');        
+       
+        if(pScore == 2){
+            winner.textContent = "You win "
+            
+        }
+        else{
+            winner.textContent = "Computer win "
+        }      
+    }
+    else{
+       return
+    }
+
+}
