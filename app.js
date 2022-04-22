@@ -1,6 +1,5 @@
-
-const pScore = 0;
-const cScore = 0;
+let pScore = 0;
+let cScore = 0;
 
 const startGame = () =>{
     const playBtn = document.querySelector('.start');
@@ -27,112 +26,114 @@ const playGame = () => {
     options.forEach(option =>{
         option.addEventListener('click', function(){
         // Random fingers for computer
-            const computerNum = Math.floor(Math.random()*5);
-            const computerFinger = computerOptions[computerNum];
-            console.log(computerFinger)
-            const playerFinger = this.name   
-            console.log(playerFinger)         
-        // Updating finger images            
+            let computerNum = Math.floor(Math.random()*5);
+            let computerFinger = computerOptions[computerNum];
+        
+            
+            
+            let playerFinger = this.name
+            console.log("playerFinger: " + playerFinger)
+
+            
+            // Updating finger images            
             playerHand.src = `./images/${playerFinger}.png`;            
-            computerHand.src = `./images/${computerFinger}.png`;
+            computerHand.src = `./images/${computerFinger}.png`;   
             
+            compareFingers(playerFinger, computerFinger);   
+           
             
-        })
-    })
-    
+        })        
+    })   
     
 }
-playGame()
 
-
-const updateScore = () =>{
+const updateScore = () => {
     const playerScore = document.getElementById('player-score');
     const computerScore = document.getElementById("computer-score");
     playerScore.textContent = pScore;
     computerScore.textContent = cScore;
   }; 
 
-
 const compareFingers = (computerFinger, playerFinger) => {
     if(playerFinger==="thumb"){
-        if(computerFinger==="index"){
-            alert("player win")
+        if(computerFinger==="index"){            
             pScore++;
             updateScore();
             return
         }
-        else if (compareFingers==="pinky"){
-            alert("computer win")
+        else if (compareFingers==="pinky"){            
             cScore++
             updateScore()
             return
         }else{
-            alert("try again")
+            return
         }
     }
     if(playerFinger==="index"){
-        if(computerFinger==="middle"){
-            alert("player win")
+        if(computerFinger==="middle"){            
             pScore++;
             updateScore();
             return
         }
-        else if (compareFingers==="thumb"){
-            alert("computer win")
+        else if (compareFingers==="thumb"){            
             cScore++
             updateScore()
             return
         }else{
-            alert("try again")
+            return
         }
     }
     if(playerFinger==="middle"){
-        if(computerFinger==="ring"){
-            alert("player win")
+        if(computerFinger==="ring"){            
             pScore++;
             updateScore();
             return
         }
-        else if (compareFingers==="index"){
-            alert("computer win")
+        else if (compareFingers==="index"){            
             cScore++
             updateScore()
             return
         }else{
-            alert("try again")
+            return
         }
     }
     if(playerFinger==="ring"){
-        if(computerFinger==="pinky"){
-            alert("player win")
+        if(computerFinger==="pinky"){            
             pScore++;
             updateScore();
             return
         }
-        else if (compareFingers==="middle"){
-            alert("computer win")
+        else if (compareFingers==="middle"){            
             cScore++
             updateScore()
             return
         }else{
-            alert("try again")
+            return
         }
     }
     if(playerFinger==="pinky"){
-        if(computerFinger==="thumb"){
-            alert("player win")
+        if(computerFinger==="thumb"){           
             pScore++;
             updateScore();
             return
         }
-        else if (compareFingers==="ring"){
-            alert("computer win")
+        else if (compareFingers==="ring"){            
             cScore++
             updateScore()
             return
         }else{
-            alert("try again")
+            return
         }
     }
 }
-compareFingers()
+playGame()
+// const stopGame = (pScore, cScore) =>{
+//     if(cScore == 2 || pScore == 2){
+//         prompt("game over")
+//         startGame()
+//     }
+//     else{
+//        return
+//     }
+
+// }
