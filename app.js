@@ -4,10 +4,19 @@ let cScore = 0;
 const menuScreen = document.querySelector('.menu');
 const gameScreen = document.querySelector('.game');
 
+const playerScore = document.getElementById('player-score');
+const computerScore = document.getElementById("computer-score");
+
 const startGame = () =>{
     const playBtn = document.querySelector('.start');
 
     playBtn.addEventListener('click',()=>{
+        // reset scores
+        pScore = 0;
+        cScore = 0;
+        playerScore.textContent = pScore;
+        computerScore.textContent = cScore;
+        
         menuScreen.classList.add('fadeOut');
         gameScreen.classList.add('fadeIn');
        
@@ -53,8 +62,7 @@ playGame()
 
 
 const updateScore = () => {
-    const playerScore = document.getElementById('player-score');
-    const computerScore = document.getElementById("computer-score");
+
     playerScore.textContent = pScore;
     computerScore.textContent = cScore;
   }; 
