@@ -1,14 +1,18 @@
 let pScore = 0;
 let cScore = 0;
 
+const menuScreen = document.querySelector('.menu');
+const gameScreen = document.querySelector('.game');
+
 const startGame = () =>{
     const playBtn = document.querySelector('.start');
-    const menuScreen = document.querySelector('.menu');
-    const gameScreen = document.querySelector('.game');
+
     playBtn.addEventListener('click',()=>{
         menuScreen.classList.add('fadeOut');
-        gameScreen.classList.add('fadeIn')
+        gameScreen.classList.add('fadeIn');
+       
     })
+ 
 }
 startGame();
 
@@ -129,23 +133,24 @@ const compareFingers = (playerFinger, computerFinger) => {
 }
 
 const stopGame = (pScore, cScore) =>{
-    if(cScore == 2 || pScore == 2){        
-        let winner = document.getElementsByTagName('h1')
-        const menuScreen = document.querySelector('.menu');
-        const gameScreen = document.querySelector('.game');
-        menuScreen.classList.remove('fadeOut');
-        gameScreen.classList.remove('fadeIn');        
-       
-        if(pScore == 2){
-            winner.textContent = "You win "
+    
+    if(cScore >= 2 || pScore >= 2){   
+        let winner = document.getElementById('winner')          
+
+        if(cScore >= 2){
+            winner.textContent = "Computer win "
+            console.log(winner)
             
         }
+        else if(pScore >= 2){
+            winner.textContent = "You win "
+  
+        }        
         else{
-            winner.textContent = "Computer win "
-        }      
-    }
-    else{
-       return
-    }
-
+            return
+        }
+    menuScreen.classList.remove('fadeOut');
+    gameScreen.classList.remove('fadeIn'); 
+    
+    }    
 }
