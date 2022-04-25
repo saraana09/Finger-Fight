@@ -16,7 +16,7 @@ const startGame = () =>{
         cScore = 0;
         playerScore.textContent = pScore;
         computerScore.textContent = cScore;
-        
+
         menuScreen.classList.add('fadeOut');
         gameScreen.classList.add('fadeIn');
        
@@ -24,6 +24,21 @@ const startGame = () =>{
  
 }
 startGame();
+
+// const showRules = () => {
+//     const ruleBtn = document.querySelector('rule-btn');    
+//     const closeBtn = document.querySelector('close-btn');
+//     const ruleScreen = document.getElementById('rules');
+//     ruleBtn.addEventListener('click',()=>{
+//         ruleScreen.classList.remove('fadeOut')
+//     })
+//     closeBtn.addEventListener('click',()=>{
+//         ruleScreen.classList.add('fadeOut')
+//     })
+// }
+
+
+
 
 const playGame = () => {
     const options = document.querySelectorAll('.fingerBtn');

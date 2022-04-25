@@ -34,9 +34,9 @@ img {
 
 .computerHand{
     transform: rotateY(180deg);
-    
 
-  }
+}
+
 .name{
     border: none;
     width: 25vw;
@@ -49,10 +49,12 @@ img {
   
 }
 
-.playerOption >h3{
+
+.playerOption >h4{
     border: none;
     font-size: 1.5em;
     padding: 15px;
+    margin: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,6 +63,7 @@ img {
     background-color: #AAAAFF;        
     height:120px ;
     width: 120px;
+    padding: 15px;
     border-radius: 50%;   
     box-shadow: 0px 0px 20px 10px; 
 }
@@ -80,14 +83,15 @@ img {
     -ms-transition:500ms width;
     -o-transition:500ms width;
     transition:500ms width;
+    transition: opacity 0.5s ease;
         
       
-  }
+}
 h1{
     font-size: 100px;
   }
 
-  .menu button {
+.menu button {
     width: 150px;
     height: 150px;
     border: none;    
@@ -96,15 +100,53 @@ h1{
     background: #AAAAFF;
     border-radius: 50%;     
     cursor: pointer;
-  }
+}
 .game {
     position:absolute;
- }
-section.fadeOut{
+    transition: opacity 0.9s ease 0.9s;
+}
+.fadeOut{
     opacity: 0;
     pointer-events: none;
- }
-section.fadeIn {
+}
+.fadeIn {
     opacity: 1;
     pointer-events: all;
+}
+.rules{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) ; 
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: #AAAAFF;
+ 
+}
+.rule-header{
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    
+}
+.rule-header .title {
+    font-size: 1.25rem;
+    font-weight: bold;
   }
+.close-btn {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    width:fit-content;
+    height: fit-content;
+}
+.rule-body {
+    padding: 10px 15px;
+}
