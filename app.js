@@ -3,12 +3,25 @@ let cScore = 0;
 
 const menuScreen = document.querySelector('.menu');
 const gameScreen = document.querySelector('.game');
+const ruleScreen = document.querySelector('.rules');
 
 const playerScore = document.getElementById('player-score');
 const computerScore = document.getElementById("computer-score");
 
-const startGame = () =>{
+const buttonActions = () =>{
     const playBtn = document.querySelector('.start');
+    const ruleBtn = document.querySelector('.rule');    
+    const closeBtn = document.querySelector('.close');
+    
+
+    ruleBtn.addEventListener('click',()=>{
+        ruleScreen.classList.remove('fadeOut')
+        ruleScreen.classList.add('fadeIn')
+    })
+    closeBtn.addEventListener('click',()=>{
+        ruleScreen.classList.add('fadeOut')
+        ruleScreen.classList.remove('fadeIn')
+    })
 
     playBtn.addEventListener('click',()=>{
         // reset scores
@@ -23,22 +36,6 @@ const startGame = () =>{
     })
  
 }
-startGame();
-
-// const showRules = () => {
-//     const ruleBtn = document.querySelector('rule-btn');    
-//     const closeBtn = document.querySelector('close-btn');
-//     const ruleScreen = document.getElementById('rules');
-//     ruleBtn.addEventListener('click',()=>{
-//         ruleScreen.classList.remove('fadeOut')
-//     })
-//     closeBtn.addEventListener('click',()=>{
-//         ruleScreen.classList.add('fadeOut')
-//     })
-// }
-
-
-
 
 const playGame = () => {
     const options = document.querySelectorAll('.fingerBtn');
@@ -73,8 +70,6 @@ const playGame = () => {
     })   
     
 }
-playGame()
-
 
 const updateScore = () => {
 
@@ -177,3 +172,6 @@ const stopGame = (pScore, cScore) =>{
     
     }    
 }
+
+buttonActions();
+playGame();
